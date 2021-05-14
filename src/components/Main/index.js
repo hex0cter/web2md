@@ -1,3 +1,4 @@
+import * as React from 'react';
 import './index.css';
 import UrlFetcher from '../UrlFetcher';
 import ResultPanel from '../ResultPanel';
