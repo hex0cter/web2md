@@ -1,12 +1,14 @@
 import * as React from 'react';
 import './App.css';
+import { StateProvider } from './state-context';
 import Main from './components/Main';
-
 
 function App() {
   return (
     <div className="App">
-      <Main />
+      <StateProvider>
+        <Main />
+      </StateProvider>
     </div>
   );
 }
