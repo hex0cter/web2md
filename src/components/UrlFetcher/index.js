@@ -12,7 +12,7 @@ function UrlFetcher() {
     <div className='UrlFetcher'>
       <TextField id='standard-basic' label='URL' fullWidth defaultValue={url} onChange={(event) => setUrl(event.target.value)}/>
       <div className='FetchButton'>
-        <Button variant='contained' color='secondary' onClick={() => dispatch({type: actions.ACTION_UPDATE_URL, url})}>Fetch</Button>
+        <Button variant='contained' color='secondary' onClick={() => dispatch({ type: actions.ACTION_UPDATE_URL, url })}>Fetch</Button>
       </div>
     </div>
   );

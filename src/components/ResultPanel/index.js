@@ -4,7 +4,7 @@ import './index.css';
 
 function ResultPanel() {
   const {
-    state: {url},
+    state: { url },
   } = useStateContext();
 
   return (

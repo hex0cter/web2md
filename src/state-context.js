@@ -28,7 +28,7 @@ function stateReducer(state, action) {
   }
 }
 
-function StateProvider({children}) {
+function StateProvider({ children }) {
   const [state, dispatch] = React.useReducer(stateReducer, { url: null });
   // NOTE: you *might* need to memoize this value
   // Learn more in http://kcd.im/optimize-context

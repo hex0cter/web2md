@@ -36,6 +36,10 @@ module.exports = {
       'always'
     ],
     'react/prop-types': 'off',
-    'no-debugger': 'off'
+    'no-debugger': 'off',
+    'object-curly-spacing': [
+      'error',
+      'always'
+    ]
   }
 };
