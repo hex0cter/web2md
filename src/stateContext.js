@@ -7,6 +7,7 @@ const StateContext = React.createContext({
 });
 
 function stateReducer(state, action) {
+  // debugger;
   console.log(`action is ${JSON.stringify(action)}, old state is ${JSON.stringify(state)}`);
 
   switch (action.type) {

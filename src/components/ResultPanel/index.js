@@ -1,15 +1,15 @@
 import * as React from 'react';
-import { useStateContext } from '../../state-context';
+import { useStateContext } from '../../stateContext';
 import './index.css';
 
 function ResultPanel() {
   const {
-    state: { url },
+    state: { markdown },
   } = useStateContext();
 
   return (
     <div className="ResultPanel">
-      Here comes the result: {url}
+      Here comes the result: { JSON.stringify(markdown) }
     </div>
   );
 }

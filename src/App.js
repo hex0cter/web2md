@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './App.css';
-import { StateProvider } from './state-context';
+import { StateProvider } from './stateContext';
 import Main from './components/Main';
 
 function App() {
