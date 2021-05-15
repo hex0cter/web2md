@@ -22,7 +22,7 @@ provider:
   stage: dev
   region: eu-north-1
   memorySize: 128
-  timeout: 3
+  timeout: 15
   environment:
     SERVICE_NAME: ${self:service}
     STAGE: ${opt:stage, self:provider.stage}

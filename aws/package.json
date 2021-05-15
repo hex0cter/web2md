@@ -8,7 +8,9 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "@postlight/mercury-parser": "^2.2.0"
+  },
   "devDependencies": {
     "serverless": "^2.41.2"
   }
