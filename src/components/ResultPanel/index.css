@@ -1,0 +1,9 @@
+.ResultPanel {
+  text-align: initial;
+  font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: large;
+}
+
+.ResultPanel img {
+  max-width: 100%;
+}

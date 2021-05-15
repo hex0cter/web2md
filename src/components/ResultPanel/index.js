@@ -1,4 +1,5 @@
 import * as React from 'react';
+import ReactMarkdown from 'react-markdown';
 import { useStateContext } from '../../stateContext';
 import './index.css';
 
@@ -9,7 +10,8 @@ function ResultPanel() {
 
   return (
     <div className="ResultPanel">
-      Here comes the result: { JSON.stringify(markdown) }
+      <ReactMarkdown>{ markdown }</ReactMarkdown>
+      {/* Here comes the result: { JSON.stringify(markdown) } */}
     </div>
   );
 }
