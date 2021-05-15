@@ -20,25 +20,25 @@ module.exports = {
   ],
   'rules': {
     'indent': [
-      'error',
+      'warning',
       2
     ],
     'linebreak-style': [
-      'error',
+      'warning',
       'unix'
     ],
     'quotes': [
-      'error',
+      'warning',
       'single'
     ],
     'semi': [
-      'error',
+      'warning',
       'always'
     ],
     'react/prop-types': 'off',
     'no-debugger': 'off',
     'object-curly-spacing': [
-      'error',
+      'warning',
       'always'
     ]
   }
