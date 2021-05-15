@@ -4,15 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "create_domain": "serverless create_domain",
     "deploy": "serverless deploy --stage dev"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "serverless": "^2.41.2"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "serverless-domain-manager": "^5.1.0"
+    "serverless": "^2.41.2"
   }
 }

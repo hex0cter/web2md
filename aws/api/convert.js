@@ -1,8 +1,7 @@
 
 exports.handler = async (event) => {
   console.log('event', event);
-  const params = event.pathParameters;
-  console.log(`params: ${JSON.stringify(params)}`);
+  const { url } = JSON.parse(event.body)
 
   const response = {
     statusCode: 200,
@@ -10,7 +9,7 @@ exports.handler = async (event) => {
       'Access-Control-Allow-Origin' : '*',
       'Access-Control-Allow-Credentials' : true
     },
-    body: JSON.stringify({ result: 'ok' })
+    body: JSON.stringify({ url, result: 'ok' })
   };
 
   return response;

@@ -1,20 +1,20 @@
 service: html2markdown
 
-plugins:
-  - serverless-domain-manager
+# plugins:
+#   - serverless-domain-manager
 
 custom:
   domain: html2markdown.danielhan.dev
-  customDomain:
-    domainName: api.${self:custom.domain}
-    basePath: ${file(./serverless-config.yml):api.${opt:stage, self:provider.stage}}
-    stage: ${opt:stage, self:provider.stage}
-    certificateName: ${self:custom.domain}
-    createRoute53Record: true
-    endpointType: 'regional'
-    securityPolicy: tls_1_2
-    apiType: rest
-    autoDomain: false
+  # customDomain:
+  #   domainName: api.${self:custom.domain}
+  #   basePath: ${file(./serverless-config.yml):api.${opt:stage, self:provider.stage}}
+  #   stage: ${opt:stage, self:provider.stage}
+  #   certificateName: ${self:custom.domain}
+  #   createRoute53Record: true
+  #   endpointType: 'regional'
+  #   securityPolicy: tls_1_2
+  #   apiType: rest
+  #   autoDomain: false
 
 provider:
   name: aws
@@ -34,6 +34,6 @@ functions:
     name: ${self:service}-${opt:stage, self:provider.stage}-converter
     events:
       - http:
-          path: /convert/{url}
+          path: /convert
           method: post
           cors: true

@@ -15,7 +15,10 @@ function UrlFetcher() {
   };
 
   const onClickFetch = async () => {
-    const result = await axios.post('https://api.html2markdown.danielhan.dev/v1/convert/dwdwdw');
+    const result = await axios.post(
+      'https://api.html2markdown.danielhan.dev/v1/convert',
+      { url }
+    );
     const markdown = result.data;
     dispatch({ type: actions.ACTION_UPDATE_MARKDOWN, markdown });
   };
