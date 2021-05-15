@@ -7,7 +7,7 @@ import './index.css';
 
 function UrlFetcher() {
   const { dispatch } = useStateContext();
-  const [url, setUrl] = useState('');
+  const [url, setUrl] = useState('https://medium.com/analytics-vidhya/how-to-create-a-python-library-7d5aea80cc3f');
 
   const onUrlChange = ({ target }) => {
     console.log('On change called');
