@@ -50,6 +50,10 @@ function UrlFetcher() {
     }
   };
 
+  const onFocus = ({ target }) => {
+    target.select();
+  };
+
   const onClickFetch = async () => {
     if (!validateUrl(url)) {
       setSnackBarOpen(true);
@@ -78,6 +82,7 @@ function UrlFetcher() {
         defaultValue={url}
         onChange={onUrlChange}
         onKeyPress={onKeyPress}
+        onFocus={onFocus}
         placeholder='https://example.com'
       />
       <div className='FetchButton'>
