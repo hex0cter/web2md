@@ -8,7 +8,7 @@ const StateContext = React.createContext({
 
 function stateReducer(state, action) {
   // debugger;
-  console.log(`action is ${JSON.stringify(action)}, old state is ${JSON.stringify(state)}`);
+  // console.log(`action is ${JSON.stringify(action)}, old state is ${JSON.stringify(state)}`);
 
   switch (action.type) {
   case actions.ACTION_UPDATE_URL: {

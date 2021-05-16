@@ -7,14 +7,24 @@ import './index.css';
 
 function UrlFetcher() {
   const { dispatch } = useStateContext();
-  const [url, setUrl] = useState('https://medium.com/analytics-vidhya/how-to-create-a-python-library-7d5aea80cc3f');
+  const [url, setUrl] = useState('https://example.com'); // https://medium.com/analytics-vidhya/how-to-create-a-python-library-7d5aea80cc3f
+
+  const validateUrl = (url) => {
+    const expression = /[-a-zA-Z0-9@:%_+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_+.~#?&//=]*)?/gi;
+    const regexp = new RegExp(expression);
+    return regexp.test(url);
+  };
 
   const onUrlChange = ({ target }) => {
-    console.log('On change called');
     setUrl(target.value);
   };
 
   const onClickFetch = async () => {
+    if (!validateUrl(url)) {
+      console.log(`Invalid url: ${url}`);
+      return;
+    }
+
     const result = await axios.post(
       'https://api.html2markdown.danielhan.dev/v1/convert',
       { url }
@@ -25,7 +35,7 @@ function UrlFetcher() {
 
   return (
     <div className='UrlFetcher'>
-      <TextField id='standard-basic' label='URL' fullWidth defaultValue={url} onChange={onUrlChange} />
+      <TextField id='standard-basic' label='Fill in a web address' fullWidth defaultValue={url} onChange={onUrlChange} />
       <div className='FetchButton'>
         <Button variant='contained' color='secondary' onClick={onClickFetch}>Fetch</Button>
       </div>

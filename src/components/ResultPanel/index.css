@@ -3,3 +3,9 @@
   justify-content: space-around;
   text-align: initial;
 }
+
+.ResultPanel textarea {
+  color: #fafbfc !important ;
+  background-color: #333 !important;
+  cursor: text;
+}
