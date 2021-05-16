@@ -4,7 +4,7 @@ import './index.css';
 function Footer() {
   return (
     <div className="Footer">
-      Web2Markdown converter. All rights reservered by <a href='https://danielhan.dev'>Daniel Han</a>.
+      &copy; 2021 <a href='https://danielhan.dev'>Daniel Han</a>. Web2Markdown converter.
     </div>
   );
 }
