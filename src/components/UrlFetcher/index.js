@@ -43,6 +43,13 @@ function UrlFetcher() {
     setUrl(target.value);
   };
 
+  const onKeyPress = async (event) => {
+    if (event.key === 'Enter') {
+      await onClickFetch();
+      event.preventDefault();
+    }
+  };
+
   const onClickFetch = async () => {
     if (!validateUrl(url)) {
       setSnackBarOpen(true);
@@ -64,7 +71,15 @@ function UrlFetcher() {
 
   return (
     <div className='UrlFetcher'>
-      <TextField id='standard-basic' label='Fill in a web address' fullWidth defaultValue={url} onChange={onUrlChange} />
+      <TextField id='standard-basic'
+        label='Fill in a web address'
+        fullWidth
+        autoFocus
+        defaultValue={url}
+        onChange={onUrlChange}
+        onKeyPress={onKeyPress}
+        placeholder='https://example.com'
+      />
       <div className='FetchButton'>
         <Button variant='contained' color='secondary' onClick={onClickFetch}>Fetch</Button>
       </div>
