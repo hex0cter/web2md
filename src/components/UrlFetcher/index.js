@@ -34,12 +34,13 @@ function UrlFetcher() {
   };
 
   const validateUrl = (url) => {
-    const expression = /[-a-zA-Z0-9@:%_+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_+.~#?&//=]*)?/gi;
+    const expression = /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-/]))?/;
     const regexp = new RegExp(expression);
     return regexp.test(url);
   };
 
   const onUrlChange = ({ target }) => {
+    setSnackBarOpen(false);
     setUrl(target.value);
   };
 
@@ -64,11 +65,14 @@ function UrlFetcher() {
     const result = await axios.post(
       'https://api.html2markdown.danielhan.dev/v1/convert',
       { url }
-    );
+    ).catch(() => {
+      setSnackBarOpen(true);
+    });
     setBackdropOpen(false);
 
-    const markdown = result.data;
-    dispatch({ type: actions.ACTION_UPDATE_MARKDOWN, markdown });
+    if (result && result.data) {
+      dispatch({ type: actions.ACTION_UPDATE_MARKDOWN, markdown: result.data });
+    }
   };
 
   const classes = useStyles();
@@ -94,7 +98,7 @@ function UrlFetcher() {
         onClose={handleCloseSnackbar}
       >
         <Alert onClose={handleCloseSnackbar} severity="error">
-          This is an invalid URL. Please try something else.
+          Invalid URL: please try something else.
         </Alert>
       </Snackbar>
       <Backdrop className={classes.backdrop} open={isBackdropOpen}>
