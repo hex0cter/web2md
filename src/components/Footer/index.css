@@ -1,0 +1,11 @@
+.Footer {
+  padding: 1em;
+  font-size: small;
+  font-style: italic;
+  color: rgb(124, 123, 122);
+}
+
+.Footer a {
+  color: rgb(124, 123, 122);
+  text-decoration: none;
+}

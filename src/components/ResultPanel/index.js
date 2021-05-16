@@ -15,8 +15,7 @@ function ResultPanel() {
     state: { markdown },
   } = useStateContext();
 
-  const handleEditorChange = ({ html, text }) => {
-    console.log('handleEditorChange', html, text);
+  const handleEditorChange = ({ text }) => {
     dispatch({ type: actions.ACTION_UPDATE_MARKDOWN, markdown: text });
   };
 
