@@ -21,7 +21,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "preinstall": "cd aws && yarn install",
+    "deploy:be": "cd aws && serverless deploy",
+    "deploy:fe": "yarn build && aws s3 sync build s3://web2md.danielhan.dev",
+    "deploy": "yarn deploy:be && yarn deploy:fe"
   },
   "eslintConfig": {
     "extends": [

@@ -5,3 +5,8 @@
 .FetchButton {
   padding: 1em 0 1em 1em;
 }
+
+.MuiInputBase-input {
+  color: rgb(119, 83, 83) !important;
+  font-style: italic !important;
+}
