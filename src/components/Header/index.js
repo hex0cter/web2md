@@ -12,8 +12,8 @@ function Header() {
           Web to Markdown
         </div>
         <div className='Subtitle'>
-          Convert a webpage into markdown has never been easier.  <br/>
-          Just paste the web address and presss on the button.
+          Convert a webpage into markdown in just two seconds. <br/>
+          Paste the web address then hit Enter.
         </div>
       </div>
     </div>
