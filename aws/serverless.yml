@@ -46,8 +46,3 @@ functions:
     handler: api/convert.handler
     runtime: python3.8
     name: ${self:service}-${opt:stage, self:provider.stage}-converter
-    # events:
-    #   - http:
-    #       path: /convert
-    #       method: post
-    #       cors: true

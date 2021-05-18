@@ -12,12 +12,8 @@ exports.handler = async (event) => {
   const { url } = JSON.parse(event.body)
   const result = await Mercury.parse(url);
   console.log(`result: ${JSON.stringify(result)}`);
-  const payload = { url, result };
-  console.log(`payload: ${JSON.stringify(payload)}`);
-
-  // const lambda = new aws.Lambda({
-  //   region: 'us-west-2' //change to your region
-  // });
+  // const payload = { url, result };
+  // console.log(`payload: ${JSON.stringify(payload)}`);
 
   const reply = await lambda.invoke({
     FunctionName: 'html2markdown-dev-converter',

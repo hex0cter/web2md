@@ -1,3 +1,17 @@
+# begin magic four lines
+import os
+import sys
+
+CWD = os.path.dirname(os.path.realpath(__file__))
+LOAD_PATH = os.path.join(CWD, "..", "venv/lib/python3.8/site-packages")
+sys.path.insert(0, LOAD_PATH)
+# print(sys.path)
+# print(os.listdir("/var/task/api/"))
+# print(os.listdir("/var/task/api/venv"))
+# print(os.listdir("/var/task/api/venv/lib"))
+# print(os.listdir("/var/task/api/venv/lib/python3.8"))
+# print(os.listdir("/var/task/api/venv/lib/python3.8/site-packages"))
+
 from mercy_reader import reader
 
 def handler(event, context):
