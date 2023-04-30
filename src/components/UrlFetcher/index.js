@@ -63,7 +63,7 @@ function UrlFetcher() {
 
     setBackdropOpen(true);
     const result = await axios.post(
-      'https://api.html2markdown.danielhan.dev/v1/convert',
+      'https://api.danielhan.dev/web2md/convert',
       { url }
     ).catch(() => {
       setSnackBarOpen(true);
